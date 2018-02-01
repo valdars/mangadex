@@ -1,0 +1,32 @@
+{
+
+  "description": "Mangadex",
+  "manifest_version": 2,
+  "name": "Mangadex",
+  "version": "1.0",
+  "icons": {
+    "128": "icons/mangadex.png"
+  },
+  "permissions": [
+    "*://vatoto.com/",
+    "*://mangadex.com/"
+  ],
+  "browser_action": {
+    "browser_style": true,
+    "default_title": "Mangadex",
+    "default_icon": {
+        "128": "icons/mangadex.png"
+    }
+  },
+
+  "background": {
+    "scripts": ["background.js"]
+  },
+
+  "applications": {
+    "gecko": {
+      "id": "mangadex@valdars.eu",
+      "strict_min_version": "42.0"
+    }
+  }
+}

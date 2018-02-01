@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/png" href="icons/mangadex.ico" />
+  <title>Mangadex</title>
+  <link rel="stylesheet" href="libs/bulma.min.css">
+
+  <style media="screen" type="text/css">
+    html,
+    body,
+    .container,
+    .textarea {
+      height: 100%;
+    }
+
+    .checkbox input {
+      margin-right: 1em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="notification is-danger is-hidden" id="errorContainer">
+      <button class="delete" id="btnCloseError"></button>
+      <span id="errorContent"></span>
+    </div>
+
+    <div id="jsonContaner" class="container">
+      <div class="field is-grouped">
+        <div class="control">
+          <button class="button is-primary" id="btnFetchJson">Get JSON from Vatoto</button>
+        </div>
+        <div class="control">
+          <button class="button is-primary" id="btnParseJson">Import</button>
+        </div>
+      </div>
+
+      <textarea class="textarea" id="json" placeholder="Put JSON here"></textarea>
+    </div>
+
+    <div id="importContainer" class="container" hidden>
+        <div class="field is-grouped">
+            <div class="control">
+              <button class="button is-primary" id="btnImport">Import</button>
+            </div>
+          </div>
+      <ul id="followsList"></ul>
+    </div>
+
+  </div>
+  <script src="mangadex.js"></script>
+</body>
+
+</html>
