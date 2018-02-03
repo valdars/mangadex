@@ -84,8 +84,17 @@ function importSelectedFollows() {
 function importFollow(id) {
     let url = 'https://mangadex.com/ajax/actions.ajax.php?function=manga_follow&id=' + id;
 
+    $.ajax({
+        url: url,
+        type: "GET",
+        success: () => {successes.push(id)},
+        error: () => {failures.push(id)},
+      });
+      return;
+
     var myHeaders = new Headers();
     myHeaders.append('referer', 'https://mangadex.com/follows');
+    myHeaders.append('x-requested-with', 'XMLHttpRequest');
 
     var myInit = {
         method: 'GET',
